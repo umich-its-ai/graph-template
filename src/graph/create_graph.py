@@ -4,8 +4,12 @@ import inspect
 import pkgutil
 from typing import List
 
+from dotenv import load_dotenv
+
 from src.graph.agent_graph import AgentGraph
 from src.tools.base import MiMaizeyTool
+
+load_dotenv()
 
 
 def load_tools_from_directory(package_path: str) -> List[MiMaizeyTool]:
@@ -43,15 +47,3 @@ def create_mimaizey_graph() -> AgentGraph:
     mimaizey_instance.compile()
 
     return mimaizey_instance
-
-
-# async def main():
-#     mimaizey_graph = create_mimaizey_graph()
-#     resp = await mimaizey_graph.invoke(
-#         chat_history=[],
-#         message="I want to multiply 3 by 4",
-#     )
-#     print(resp[0])
-
-
-# asyncio.run(main())
