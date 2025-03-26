@@ -4,12 +4,8 @@ import inspect
 import pkgutil
 from typing import List
 
-from dotenv import load_dotenv
-
 from src.graph.agent_graph import AgentGraph
 from src.tools.base import MiMaizeyTool
-
-load_dotenv()
 
 
 def load_tools_from_directory(package_path: str) -> List[MiMaizeyTool]:

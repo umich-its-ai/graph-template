@@ -3,8 +3,15 @@ import logging
 import os
 import sys
 
+import streamlit as st
+from dotenv import load_dotenv
+
+load_dotenv()
+
 # Add the project root to sys.path so imports work
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
+
+from src.graph.create_graph import create_mimaizey_graph
 
 # Set up logging so we can see the logs in the terminal when running the Streamlit app
 logging.basicConfig(
@@ -12,10 +19,6 @@ logging.basicConfig(
     format="%(asctime)s — %(levelname)s — %(message)s",
 )
 logger = logging.getLogger(__name__)
-
-import streamlit as st
-
-from src.graph.create_graph import create_mimaizey_graph
 
 # -----------------------Session State Initialization----------------------------
 if "mimaizey_graph" not in st.session_state:
