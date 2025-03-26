@@ -4,6 +4,7 @@ from datetime import datetime
 from itertools import chain
 from typing import Any
 
+from dotenv import load_dotenv
 from langchain_core.messages import (
     AIMessage,
     AnyMessage,
@@ -29,6 +30,8 @@ from src.graph.utils import (
     validate_tool_artifact,
 )
 from src.tools.schemas import ToolCall
+
+load_dotenv()
 
 logger = logging.getLogger(__name__)
 
