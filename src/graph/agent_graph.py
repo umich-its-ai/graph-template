@@ -42,7 +42,6 @@ class Assistant:
         """
         NOTE: config to always have the key 'name' in the "configurable" key.
         """
-        configuration = config.get("configurable", {})
         formatted_prompt = self.prompt.format_messages(
             messages=state["messages"],
         )
